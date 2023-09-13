@@ -8,21 +8,6 @@
 \usepackage{multicol}
 \usepackage[margin = 1in, paperheight=11in, paperwidth=8.5in]{geometry}
 \usepackage{import}
-\usepackage[
-  backend      = biber,
-  doi          = true,
-  giveninits   = false,
-  maxcitenames = 99,
-  isbn         = false,
-  url          = false,
-  style        = apa
-]{biblatex}
-\addbibresource{bib/blog.bib}
-\addbibresource{bib/book.bib}
-\addbibresource{bib/peer.bib}
-\addbibresource{bib/preprint.bib}
-\addbibresource{bib/report.bib}
-\DeclareLanguageMapping{english}{english-apa}
 
 % Page Number
 \usepackage{lastpage}
@@ -31,9 +16,9 @@
 
 % New Commands
 \newcommand{\workspace}{\vspace{3pt}}
-\newcommand{\projectspace}{\vspace{8pt}}
-\newcommand{\grantspace}{\vspace{8pt}}
-\newcommand{\awardspace}{\vspace{3pt}}
+\newcommand{\projectspace}{\vspace{10pt}}
+\newcommand{\grantspace}{\vspace{1pt}}
+\newcommand{\awardspace}{\vspace{1pt}}
 \newcommand{\professionalspace}{\vspace{8pt}}
 \newcommand{\leadershipspace}{\vspace{5pt}}
 \newcommand{\outreachspace}{\vspace{4pt}}
@@ -57,59 +42,31 @@
 \import{sections/}{education}
 
 \vspace{-10pt}
+\section{Career Brief}
+\import{urban/}{career_brief}
+
+\vspace{-10pt}
 \section{Professional Experience}
 \import{sections/}{professional}
+
+\vspace{-10pt}
+\section{Selected Project Experience}
+\import{urban/}{projects}
     
-% \newpage
-\vspace{-30pt}
-\section{Grants and Contracts}
+\newpage
+\section{Grants}
 \import{sections/}{grants}
 
 % \newpage
 \section{Fellowships}
 \import{sections/}{fellowships}
 
-% \vspace{-10pt}
+\vspace{-10pt}
 \section{Honors \& Awards}
 \import{sections/}{awards}
-
-% \vspace{-10pt}
-% \newpage
-\section{Travel Awards}
-\import{sections/}{travel}
     
-\newpage
-\section{Publications}
-\import{sections/}{publications}
-
 % \newpage
-\section{Media}
-\import{sections/}{media}
-
-% \newpage
-\section{Community, Funder, Policymaker, and Stakeholder Presentations}
-\import{sections/}{stakeholder_presentations}
-
-% \newpage
-\section{Invited Presentations}
-\import{sections/}{invited_presentations}
-
-% \newpage
-%%%%%%% Contributed
-\vspace{-5pt}
-\section{Contributed Presentations}
-\import{sections/}{contributed_presentations}
-
-\newpage
-\section{Student Advising and Mentoring}
-\import{sections/}{advising}
-
-% \newpage
-\section{Professional Activities and Affiliations}
-\import{sections/}{activities}
-
-% \newpage
-\section{STEM K-12 and Beyond Outreach}
-\import{sections/}{outreach}
+\section{Select Publications}
+\import{short/}{publications-short}
 
 \end{document}
