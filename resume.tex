@@ -1,24 +1,42 @@
-\documentclass[12, letterpaper, roman]{moderncv} % Font sizes: 10, 11, or 12; paper sizes: a4paper, letterpaper, a5paper, legalpaper, executivepaper or landscape; font families: sans or roman
+\documentclass[11pt, letterpaper, roman]{moderncv} % Font sizes: 10, 11, or 12; paper sizes: a4paper, letterpaper, a5paper, legalpaper, executivepaper or landscape; font families: sans or roman
 
 \moderncvstyle{banking} % CV theme - options include: 'casual' (default), 'classic', 'oldstyle' and 'banking'
 \moderncvcolor{black} % CV color - options include: 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
 
 \usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
-\usepackage{etaremune}
+\usepackage[leftmargin=20pt]{etaremune}
 \usepackage{multicol}
-
-\usepackage[margin=.90in]{geometry} % Reduce document margins
-%\setlength{\hintscolumnwidth}{3cm} % Uncomment to change the width of the dates column
-%\setlength{\makecvtitlenamewidth}{10cm} % For the 'classic' style, uncomment to adjust the width of the space allocated to your name
-
-% New Commands
-\newcommand{\workspace}{\vspace{3pt}}
+\usepackage[margin = 1in, paperheight=11in, paperwidth=8.5in]{geometry}
+\usepackage{import}
+\usepackage[
+  backend      = biber,
+  doi          = true,
+  giveninits   = false,
+  maxcitenames = 99,
+  isbn         = false,
+  url          = false,
+  style        = apa
+]{biblatex}
+\addbibresource{bib/blog.bib}
+\addbibresource{bib/book.bib}
+\addbibresource{bib/peer.bib}
+\addbibresource{bib/preprint.bib}
+\addbibresource{bib/report.bib}
+\DeclareLanguageMapping{english}{english-apa}
 
 % Page Number
 \usepackage{lastpage}
 \pagestyle{fancy}
 \fancyfoot[R]{\thepage\ / \pageref{LastPage}}
 
+% New Commands
+\newcommand{\workspace}{\vspace{3pt}}
+\newcommand{\projectspace}{\vspace{8pt}}
+\newcommand{\grantspace}{\vspace{8pt}}
+\newcommand{\awardspace}{\vspace{3pt}}
+\newcommand{\professionalspace}{\vspace{8pt}}
+\newcommand{\leadershipspace}{\vspace{5pt}}
+\newcommand{\outreachspace}{\vspace{4pt}}
 
 \firstname{Claire}
 \familyname{Bowen}
@@ -29,9 +47,9 @@
 \centerline{\huge{CLAIRE MCKAY BOWEN}}
 \vspace{10pt}
 \hrule
-\vspace{8pt}
-\centerline{\small Email: cbowen@urban.org | Website: \href{https://www.clairemckaybowen.com}{www.clairemckaybowen.com} | Updated: \today}
-\vspace{8pt}
+\vspace{5pt}
+\centerline{\small E: claire.mckay.bowen@gmail.com | Web: \href{https://www.clairemckaybowen.com}{www.clairemckaybowen.com} | Updated: \today}
+\vspace{5pt}
 \hrule
 
 % \section{Executive Summary}
@@ -44,24 +62,17 @@
 % \end{itemize}
 
 \section{Education}
-\cventry{}{Ph.D. Applied and Computational Mathematics and Statistics}{University of Notre Dame \textnormal{- Notre Dame, IN}}{\textnormal{\textit{May 2018}}}{}{
-\underline{Advisor}: \href{http://acms.nd.edu/people/faculty/fang-liu/}{Dr. Fang Liu}\\
-\underline{Dissertation Topic}: Data Privacy via Integration of Differential Privacy and Data Synthesis}
-
-\workspace
-\cventry{}{M.S. Applied and Computational Mathematics and Statistics | GPA: 3.91/4.00}{University of Notre Dame \textnormal{- Notre Dame, IN}}{\textnormal{\textit{May 2015}}}{}{}
-
-\workspace
-\cventry{}{Honors B.S. Mathematics and Physics | Minor: Statistics | High Honors: Top 5\% | GPA: 3.94/4.00}{Idaho State University \textnormal{- Pocatello, ID}}{\textnormal{\hspace{-25pt}\textit{Dec. 2012}}}{}{}
+\import{sections/}{education}
 
 \section{Professional Experience}
 
 \textbf{Urban Institute} \hfill \textit{Dec. 2019 - Present}\\
-\textit{Principal Research Associate and Statistics Methods Group Lead} \hfill \textit{Oct. 2021 - Present}\\
-\textit{Lead Data Scientist, Privacy and Data Security} \hfill \textit{Dec. 2019 - Oct. 2021}
+    \textit{Senior Fellow and Statistical Methods Group Lead \hfill Jan. 2024 - Present}\\
+    \textit{Principal Research Associate and Statistical Methods Group Lead \hfill Oct. 2021 - Dec. 2023}\\
+    \textit{Lead Data Scientist, Privacy and Data Security \hfill Dec. 2019 - Sept. 2021}
     \begin{itemize}
         \item Leading a multi-year project with the IRS to create synthetic versions of the income tax return database, assess the quality and privacy guarantee of the generated synthetic data, and develop new methods for researchers to access confidential administrative data safely and securely.
-        \item Co-leading a project to design and implement the Restricted Use Data Access Program that will safely promote and expand restricted-use Department of Labor data access to facilitate timely, accurate, and informative analysis, research, and program evaluation.
+        \item Co-leading a project to design and implement the Secure Transfer, Restricted-Use Data Lake Program that promotes and expands restricted-use Department of Labor data access to facilitate timely, accurate, and informative analysis, research, and program evaluation.
         % \item Managing multiple data privacy and confidentiality projects on generating differentially private synthetic data on employer and employee industry data in rural communities in collaboration with the Bureau of Labor Statistics and Bureau of Economic Analysis.
         \item Leading the Statistical Methods Group that provides consulting services for Urban Institute, such as reviewing proposals, brainstorming ideas, and identifying appropriate statistical analyses.
         % \item Developing a body of work on data privacy and confidentiality communications, which includes blogs, research briefs, and a book.
