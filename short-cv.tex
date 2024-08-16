@@ -8,6 +8,21 @@
 \usepackage{multicol}
 \usepackage[margin = 1in, paperheight=11in, paperwidth=8.5in]{geometry}
 \usepackage{import}
+\usepackage[
+  backend      = biber,
+  doi          = true,
+  giveninits   = false,
+  maxcitenames = 99,
+  isbn         = false,
+  url          = false,
+  style        = apa
+]{biblatex}
+\addbibresource{bib/blog.bib}
+\addbibresource{bib/book.bib}
+\addbibresource{bib/peer.bib}
+\addbibresource{bib/preprint.bib}
+\addbibresource{bib/report.bib}
+\DeclareLanguageMapping{english}{english-apa}
 
 % Page Number
 \usepackage{lastpage}
@@ -16,12 +31,10 @@
 
 % New Commands
 \newcommand{\workspace}{\vspace{3pt}}
-\newcommand{\projectspace}{\vspace{10pt}}
-\newcommand{\grantspace}{\vspace{1pt}}
-\newcommand{\awardspace}{\vspace{1pt}}
-\newcommand{\professionalspace}{\vspace{8pt}}
-\newcommand{\leadershipspace}{\vspace{5pt}}
-\newcommand{\outreachspace}{\vspace{4pt}}
+\newcommand{\projectspace}{\vspace{3pt}}
+\newcommand{\grantspace}{\vspace{3pt}}
+\newcommand{\awardspace}{\vspace{0pt}}
+\newcommand{\professionalspace}{\vspace{5pt}}
 
 \firstname{Claire}
 \familyname{Bowen}
@@ -33,7 +46,7 @@
 \vspace{10pt}
 \hrule
 \vspace{5pt}
-\centerline{\small Email: cbowen@urban.org | Website: \href{https://www.clairemckaybowen.com}{www.clairemckaybowen.com} | Last Updated: \today}
+\centerline{\small Email: cbowen@urban.org | Web: \href{https://www.clairemckaybowen.com}{www.clairemckaybowen.com} | Updated: \today}
 \vspace{5pt}
 \hrule
 
@@ -41,9 +54,9 @@
 \section{Education}
 \import{sections/}{education}
 
-\vspace{-10pt}
-\section{Career Brief}
-\import{urban/}{career_brief}
+% \vspace{-10pt}
+% \section{Career Brief}
+% \import{urban/}{career_brief}
 
 \vspace{-10pt}
 \section{Professional Experience}
@@ -53,7 +66,7 @@
 \section{Selected Project Experience}
 \import{urban/}{projects}
     
-\newpage
+\vspace{-10pt}
 \section{Grants}
 \import{sections/}{grants}
 
